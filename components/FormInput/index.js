@@ -11,7 +11,7 @@ const FormInput = ({label, ...otherProps}) => {
   const {errors, touched, values, handleChange} = useFormikContext();
 
   useEffect(() => {
-    console.log(touched[label?.toLowerCase()]);
+    // console.log(touched[label?.toLowerCase()]);
     touched[label?.toLowerCase()]
       ? colors.APP_PRIMARY_COLOR
       : colors.APP_COLOR_LIGHT1;

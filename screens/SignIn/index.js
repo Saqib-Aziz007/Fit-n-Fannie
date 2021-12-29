@@ -1,14 +1,16 @@
 import {Formik} from 'formik';
 import React from 'react';
-import {Alert, Button, Image, ScrollView, Text, View} from 'react-native';
+import {Alert, Image, ScrollView, Text, View} from 'react-native';
 import {styles} from './styles';
 import * as Yup from 'yup';
 import {colors, images} from '../../components/constants/constants';
+import AppIconButton from '../../components/AppIconButton/index';
 import Divider from '../../components/Divider';
-import AppIconButton from '../../components/AppIconButton/index.js';
 import AppSocialButton from '../../components/AppSocialButton.js';
 import FormInput from '../../components/FormInput';
 import AppButton from '../../components/AppButton';
+import {POPPINS_EXTRA_BOLD, POPPINS_REGULAR} from '../../assets/fonts/fonts.js';
+import {SIGNUP} from '../../navigation/routes';
 
 const ValidationSchema = Yup.object().shape({
   name: Yup.string()
@@ -23,7 +25,7 @@ const ValidationSchema = Yup.object().shape({
     .label('Password'),
 });
 
-const SignUp = ({navigation}) => {
+const SignIn = ({navigation}) => {
   return (
     <ScrollView
       style={{
@@ -33,15 +35,14 @@ const SignUp = ({navigation}) => {
       }}>
       <View style={{flex: 1}}>
         <View style={styles.logocontainer}>
-          {/* <Button title="button" onPress={() => console.log('on press')} /> */}
           <AppIconButton
             icon={'chevron-left'}
             size={32}
             style={{position: 'absolute', left: 20, top: -10}}
             onPress={
+              // () => Alert.alert('Baack', 'Alert!')
+              // () => console.log('back!!!!!')
               () => navigation.goBack()
-              // console.log('back!!!!!')
-              //  navigation.goBack();
             }
           />
           <View>
@@ -65,16 +66,9 @@ const SignUp = ({navigation}) => {
             }}
             validationSchema={ValidationSchema}
             onSubmit={values => Alert.alert('Alert!', JSON.stringify(values))}>
-            {({values, handleChange, handleSubmit}) => {
+            {({values, handleChange, handleSubmit, errors, touched}) => {
               return (
-                <View>
-                  <FormInput
-                    label="NAME"
-                    value={values.name}
-                    textContentType="name"
-                    onChangeText={handleChange('name')}
-                    // style={{height: 40}}
-                  />
+                <View style={{marginTop: 40}}>
                   <FormInput
                     label="EMAIL"
                     keyboardType="email-address"
@@ -88,8 +82,27 @@ const SignUp = ({navigation}) => {
                   <AppButton
                     title="SIGN UP"
                     onPress={handleSubmit}
-                    style={{marginTop: 15, marginBottom: 40}}
+                    style={{marginTop: 15, marginBottom: 15}}
                   />
+                  <View style={{alignSelf: 'center', marginBottom: 35}}>
+                    <Text
+                      style={{
+                        fontSize: 18,
+                        fontWeight: '400',
+                        // fontFamily: POPPINS_REGULAR,
+                      }}>
+                      {"Don't have an account? "}
+                      <Text
+                        onPress={() => navigation.navigate(SIGNUP)}
+                        style={{
+                          // fontFamily: POPPINS_EXTRA_BOLD,
+                          fontWeight: '700',
+                          fontSize: 18,
+                        }}>
+                        Sign Up
+                      </Text>
+                    </Text>
+                  </View>
                 </View>
               );
             }}
@@ -120,4 +133,4 @@ const SignUp = ({navigation}) => {
   );
 };
 
-export default SignUp;
+export default SignIn;
