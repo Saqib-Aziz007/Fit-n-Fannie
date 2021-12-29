@@ -5,7 +5,8 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import MaterialIconicIcon from 'react-native-vector-icons/Ionicons';
 import {colors} from '../../components/constants/constants';
 import Login1 from '../../screens/Login1';
-import SignUp from '../../screens/Sign_Up';
+import Profile from '../../screens/Profile';
+import MembershipScreen from '../../screens/MemberShip';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -26,7 +27,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={SignUp}
+        component={Profile}
         options={{
           tabBarIcon: ({color = colors.APP_PRIMARY_COLOR}) => (
             <MaterialIconicIcon name="person" color={color} size={20} />
@@ -35,7 +36,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         name="settings"
-        component={Login1}
+        component={MembershipScreen}
         options={{
           tabBarIcon: ({color = colors.APP_PRIMARY_COLOR}) => (
             <MaterialIconicIcon name="settings" color={color} size={20} />

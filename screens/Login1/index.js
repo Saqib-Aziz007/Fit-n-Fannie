@@ -13,7 +13,7 @@ import Divider from '../../components/Divider';
 import {styles} from './styles';
 import SignUp from '../Sign_Up';
 import SignIn from '../SignIn';
-import {HOME} from '../../navigation/routes';
+import {APP_HOME} from '../../navigation/routes';
 
 const Login1 = ({navigation}) => {
   return (
@@ -64,7 +64,7 @@ const Login1 = ({navigation}) => {
               title="SKIP TO DASHBOARD"
               onPress={() => {
                 // Alert.alert('Alert!', 'SKIP TO DASHBOARD Button Pressed!');
-                navigation.navigate(HOME);
+                navigation.navigate(APP_HOME);
               }}
             />
           </View>

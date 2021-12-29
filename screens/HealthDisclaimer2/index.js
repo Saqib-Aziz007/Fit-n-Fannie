@@ -4,7 +4,7 @@ import AppIconButton from '../../components/AppIconButton';
 import {colors} from '../../components/constants/constants';
 import {styles} from './styles';
 
-const HealthDisclaimer2 = () => {
+const HealthDisclaimer2 = ({navigation}) => {
   return (
     <ScrollView style={styles.scrollView}>
       <View style={{backgroundColor: colors.APP_COLOR_LIGHT1}}>
@@ -14,7 +14,7 @@ const HealthDisclaimer2 = () => {
           iconColor={colors.APP_COLOR_LIGHT3}
           backgroundColor={colors.APP_COLOR_LIGHT1}
           style={{alignSelf: 'flex-end'}}
-          onPress={() => Alert.alert('Alert!', 'Close Button!!!')}
+          onPress={() => navigation.goBack()}
         />
       </View>
       <View style={styles.container}>

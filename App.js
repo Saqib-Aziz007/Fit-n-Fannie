@@ -1,7 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import AuthNavigator from './navigation/TabNavigator/AuthNavigator';
+import AuthNavigator from './navigation/AuthNavigation/AuthNavigator';
+import HealthDisclaimer from './screens/HealthDisclaimer';
+import HealthDisclaimer2 from './screens/HealthDisclaimer2';
 
 const stack = createNativeStackNavigator();
 const App = () => {
@@ -18,17 +20,10 @@ const App = () => {
     //     </Text>
     //   </View>
     // </SafeAreaView>
-<<<<<<< HEAD
-    // <NavigationContainer>
-    //   <TabNavigator />
-    // </NavigationContainer>
-    <HealthDisclaimer />
-=======
     <NavigationContainer>
       <AuthNavigator />
     </NavigationContainer>
     // <HealthDisclaimer2 />
->>>>>>> b3c416163dc8be2cb9221c8e198ef844795767c3
   );
 };
 

@@ -1,6 +1,6 @@
 import {Formik} from 'formik';
 import React from 'react';
-import {Alert, Button, Image, ScrollView, Text, View} from 'react-native';
+import {Alert, Image, ScrollView, Text, View} from 'react-native';
 import {styles} from './styles';
 import * as Yup from 'yup';
 import {colors, images} from '../../components/constants/constants';
@@ -9,6 +9,7 @@ import AppIconButton from '../../components/AppIconButton/index.js';
 import AppSocialButton from '../../components/AppSocialButton.js';
 import FormInput from '../../components/FormInput';
 import AppButton from '../../components/AppButton';
+import {HEALTHAPPROVAL} from '../../navigation/routes';
 
 const ValidationSchema = Yup.object().shape({
   name: Yup.string()
@@ -64,7 +65,10 @@ const SignUp = ({navigation}) => {
               password: '',
             }}
             validationSchema={ValidationSchema}
-            onSubmit={values => Alert.alert('Alert!', JSON.stringify(values))}>
+            onSubmit={values => {
+              Alert.alert('Alert!', JSON.stringify(values)),
+                navigation.navigate(HEALTHAPPROVAL, values);
+            }}>
             {({values, handleChange, handleSubmit}) => {
               return (
                 <View>

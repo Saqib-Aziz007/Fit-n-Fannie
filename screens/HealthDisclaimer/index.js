@@ -8,14 +8,17 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import {Checkbox} from 'react-native-paper';
+// import {Checkbox} from 'react-native-paper';
 import AppIconButton from '../../components/AppIconButton';
 import {colors} from '../../components/constants/constants';
 import {styles} from './styles';
 import AppButton from '../../components/AppButton';
+// import Home from '../Home';
+import {APP_HOME, HEALTHDISCLAIMER} from '../../navigation/routes';
 
-const HealthDisclaimer = () => {
+const HealthDisclaimer = ({navigation, route}) => {
   const [checkboxSelect, setCheckboxSelect] = useState(false);
+  console.log('HealthDisclaimerScreen::::', route.params);
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.backButton}>
@@ -32,7 +35,10 @@ const HealthDisclaimer = () => {
         <Text style={styles.heading}>
           {'our '}
           <TouchableWithoutFeedback
-            onPress={() => Alert.alert('Alert!', 'Health & Discalaimer')}>
+            onPress={() => {
+              // Alert.alert('Alert!', 'Health & Discalaimer'),
+              navigation.navigate(HEALTHDISCLAIMER);
+            }}>
             <Text
               style={{
                 ...styles.heading,
@@ -68,7 +74,10 @@ const HealthDisclaimer = () => {
         title={'Accept & Continue'}
         style={{marginHorizontal: 50}}
         disabled={!checkboxSelect}
-        onPress={() => Alert.alert('Alert!', 'Accept & Continue')}
+        onPress={() => {
+          // Alert.alert('Alert!', 'Accept & Continue'),
+          navigation.navigate(APP_HOME, route.params);
+        }}
       />
     </ScrollView>
   );
