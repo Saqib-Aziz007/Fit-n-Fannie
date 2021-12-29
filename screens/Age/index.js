@@ -33,18 +33,18 @@ const AgeScreen = ({navigation, route}) => {
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}
-            // onPress={() =>
-            //   console.log('AgeScreen on submit::::', {
-            //     ...route.params,
-            //     Age: {Age},
-            //   })
-            // }
             onPress={() =>
-              navigation.navigate(Age, {
+              console.log('AgeScreen on submit::::', {
                 ...route.params,
                 Age: {Age},
               })
             }
+            // onPress={() =>
+            //   navigation.navigate(Age, {
+            //     ...route.params,
+            //     Age: {Age},
+            //   })
+            // }
           />
         </View>
       </View>

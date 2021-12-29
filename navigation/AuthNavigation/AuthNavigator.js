@@ -13,12 +13,14 @@ import {
   APP_HOME,
   WEIGHT,
   HEIGHT,
+  AGE,
 } from '../routes';
 import TabNavigator from '../TabNavigator/BottomTabNavigator';
 import HealthDisclaimer from '../../screens/HealthDisclaimer';
 import HealthDisclaimer2 from '../../screens/HealthDisclaimer2';
 import WeightScreen from '../../screens/weight';
 import HeightScreen from '../../screens/Height';
+import AgeScreen from '../../screens/Age';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +35,7 @@ const AuthNavigator = () => {
       <Stack.Screen name={HEALTHDISCLAIMER} component={HealthDisclaimer2} />
       <Stack.Screen name={WEIGHT} component={WeightScreen} />
       <Stack.Screen name={HEIGHT} component={HeightScreen} />
+      <Stack.Screen name={AGE} component={AgeScreen} />
     </Stack.Navigator>
   );
 };

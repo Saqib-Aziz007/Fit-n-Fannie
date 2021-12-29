@@ -11,18 +11,6 @@ import AgeScreen from './screens/Age';
 const stack = createNativeStackNavigator();
 const App = () => {
   return (
-    // <SafeAreaView>
-    //   <View>
-    //     <Text>Muhammad Saqib</Text>
-    //     <Text
-    //       style={{
-    //         fontFamily: POPPINS_ITALIC,
-    //         // fontFamily: 'Poppins-Italic',
-    //       }}>
-    //       {API_URL + ':::::Token:::::' + API_TOKEN}
-    //     </Text>
-    //   </View>
-    // </SafeAreaView>
     // <NavigationContainer>
     //   <AuthNavigator />
     // </NavigationContainer>
