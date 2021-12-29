@@ -4,6 +4,8 @@ import {colors} from '../constants/constants';
 export const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: 'row',
+    borderRadius: 10,
+    overflow: 'hidden',
   },
   buttonContainer: {
     backgroundColor: colors.APP_SECONDARY_COLOR,
@@ -18,7 +20,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
   },
   buttonconditionContainer2: {
-    backgroundColor: colors.APP_COLOR_LIGHT2,
+    backgroundColor: colors.APP_COLOR_LIGHT3,
     height: 40,
     width: 70,
     justifyContent: 'center',

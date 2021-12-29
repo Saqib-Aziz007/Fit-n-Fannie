@@ -14,7 +14,7 @@ import {colors} from '../../components/constants/constants';
 import {styles} from './styles';
 import AppButton from '../../components/AppButton';
 // import Home from '../Home';
-import {APP_HOME, HEALTHDISCLAIMER} from '../../navigation/routes';
+import {APP_HOME, HEALTHDISCLAIMER, WEIGHT} from '../../navigation/routes';
 
 const HealthDisclaimer = ({navigation, route}) => {
   const [checkboxSelect, setCheckboxSelect] = useState(false);
@@ -26,6 +26,7 @@ const HealthDisclaimer = ({navigation, route}) => {
           icon={'chevron-left'}
           size={32}
           style={{position: 'absolute', left: 30, top: 50}}
+          onPress={() => navigation.goBack()}
         />
       </View>
       <View style={styles.disclaimer}>
@@ -76,7 +77,7 @@ const HealthDisclaimer = ({navigation, route}) => {
         disabled={!checkboxSelect}
         onPress={() => {
           // Alert.alert('Alert!', 'Accept & Continue'),
-          navigation.navigate(APP_HOME, route.params);
+          navigation.navigate(WEIGHT, route.params);
         }}
       />
     </ScrollView>

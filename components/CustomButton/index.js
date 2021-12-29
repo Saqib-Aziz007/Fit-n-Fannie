@@ -14,7 +14,7 @@ const initialState = {
   },
 };
 
-const AppCustomButton = ({onPress}) => {
+const AppToggleButton = ({onPress, state1 = 'PM', state2 = 'AM', style}) => {
   const [pressed, setPressed] = useState(initialState);
 
   const handleButton1Color = () => {
@@ -44,23 +44,25 @@ const AppCustomButton = ({onPress}) => {
     });
   };
   return (
-    <View style={styles.mainContainer}>
+    <View style={[styles.mainContainer, style]}>
       <TouchableOpacity
+        style={{elevation: 5}}
         onPressIn={handleButton1Color}
-        onPress={() => onPress('PM')}>
+        onPress={() => onPress(state1)}>
         <View style={pressed.button1.buttonStyle}>
-          <Text style={pressed.button1.titleStyle}>PM</Text>
+          <Text style={pressed.button1.titleStyle}>{state1}</Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity
+        style={{elevation: 5}}
         onPressIn={handleButton2Color}
-        onPress={() => onPress('AM')}>
+        onPress={() => onPress(state2)}>
         <View style={pressed.button2.buttonStyle}>
-          <Text style={pressed.button2.titleStyle}>AM</Text>
+          <Text style={pressed.button2.titleStyle}>{state2}</Text>
         </View>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default AppCustomButton;
+export default AppToggleButton;

@@ -4,6 +4,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AuthNavigator from './navigation/AuthNavigation/AuthNavigator';
 import HealthDisclaimer from './screens/HealthDisclaimer';
 import HealthDisclaimer2 from './screens/HealthDisclaimer2';
+import WeightScreen from './screens/weight';
+import HeightScreen from './screens/Height';
+import AgeScreen from './screens/Age';
 
 const stack = createNativeStackNavigator();
 const App = () => {
@@ -20,10 +23,10 @@ const App = () => {
     //     </Text>
     //   </View>
     // </SafeAreaView>
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
-    // <HealthDisclaimer2 />
+    // <NavigationContainer>
+    //   <AuthNavigator />
+    // </NavigationContainer>
+    <AgeScreen />
   );
 };
 
