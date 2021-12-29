@@ -10,11 +10,12 @@ import {useNavigation} from '@react-navigation/native';
 import {HEIGHT} from '../../navigation/routes';
 import {styles} from './styles';
 import WeightScreen from '../weight';
+import AppSlider from '../../components/Slider';
 
-const HeightScreen = ({navigation, route}) => {
-  console.log('WightScreen', route.params);
-  const [height, setHeight] = useState();
-  const [HeightUnit, setHeightUnit] = useState('FT');
+const AgeScreen = ({navigation, route}) => {
+  console.log('AgeScreen::::', route.params);
+  const [Age, setAge] = useState(18);
+  //   const [AgeUnit, setAgeUnit] = useState('FT');
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
@@ -26,32 +27,22 @@ const HeightScreen = ({navigation, route}) => {
         />
         <Text style={styles.screenTitle}>Account Setup</Text>
         <View style={styles.progressBar}></View>
-        <Text style={styles.title}>HEIGHT</Text>
-        <TextInput
-          onChangeText={setHeight}
-          keyboardType="numeric"
-          //   selectionColor={colors.APP_COLOR_LIGHT2}
-          style={styles.input}
-        />
-        <AppToggleButton
-          state1="FT"
-          state2="CM"
-          onPress={setHeightUnit}
-          style={{alignSelf: 'center', marginTop: 25}}
-        />
+        <Text style={styles.title}>Age</Text>
+        <AppSlider onValueChange={setAge} renderValue={Age} />
+        <Text style={styles.subTitle}>years old</Text>
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}
             // onPress={() =>
-            //   console.log('HeightScreen on submit::::', {
+            //   console.log('AgeScreen on submit::::', {
             //     ...route.params,
-            //     Height: {height, HeightUnit},
+            //     Age: {Age},
             //   })
             // }
             onPress={() =>
-              navigation.navigate(HEIGHT, {
+              navigation.navigate(Age, {
                 ...route.params,
-                Height: {height, HeightUnit},
+                Age: {Age},
               })
             }
           />
@@ -61,4 +52,4 @@ const HeightScreen = ({navigation, route}) => {
   );
 };
 
-export default HeightScreen;
+export default AgeScreen;

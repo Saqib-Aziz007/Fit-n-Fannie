@@ -6,6 +6,7 @@ import HealthDisclaimer from './screens/HealthDisclaimer';
 import HealthDisclaimer2 from './screens/HealthDisclaimer2';
 import WeightScreen from './screens/weight';
 import HeightScreen from './screens/Height';
+import AgeScreen from './screens/Age';
 
 const stack = createNativeStackNavigator();
 const App = () => {
@@ -22,10 +23,10 @@ const App = () => {
     //     </Text>
     //   </View>
     // </SafeAreaView>
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
-    // <HeightScreen />
+    // <NavigationContainer>
+    //   <AuthNavigator />
+    // </NavigationContainer>
+    <AgeScreen />
   );
 };
 

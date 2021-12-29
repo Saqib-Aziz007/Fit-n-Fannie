@@ -5,12 +5,12 @@ export const styles = StyleSheet.create({
   containerStyle: {},
   trackstyle: {
     backgroundColor: colors.APP_COLOR_LIGHT3,
-    height: 10,
+    height: 8,
     borderRadius: 5,
   },
   trackThumbComponent: {
-    height: 35,
-    width: 35,
+    height: 20,
+    width: 20,
     borderRadius: 17.5,
     backgroundColor: 'transparent',
     borderWidth: 5,
