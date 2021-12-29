@@ -24,7 +24,7 @@ const App = () => {
     // <NavigationContainer>
     //   <TabNavigator />
     // </NavigationContainer>
-    <HealthDisclaimer2 />
+    <HealthDisclaimer />
   );
 };
 

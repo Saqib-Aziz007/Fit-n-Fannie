@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 14,
     fontFamily: POPPINS_REGULAR,
-    // textAlign: 'justify',
     color: colors.APP_SECONDARY_COLOR,
     marginTop: 15,
     marginBottom: 50,
