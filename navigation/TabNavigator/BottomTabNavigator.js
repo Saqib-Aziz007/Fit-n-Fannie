@@ -1,14 +1,11 @@
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import React from 'react';
 import Home from '../../screens/Home';
-import Profile from '../../screens/Profile';
-import Settings from '../../screens/Settings';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIconicIcon from 'react-native-vector-icons/Ionicons';
 import {colors} from '../../components/constants/constants';
 import Login1 from '../../screens/Login1';
 import SignUp from '../../screens/Sign_Up';
-import MembershipScreen from '../../screens/MemberShip';
 
 const Tab = createMaterialBottomTabNavigator();
 
