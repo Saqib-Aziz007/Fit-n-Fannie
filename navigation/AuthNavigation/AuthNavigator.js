@@ -11,10 +11,14 @@ import {
   HEALTHAPPROVAL,
   HEALTHDISCLAIMER,
   APP_HOME,
+  WEIGHT,
+  HEIGHT,
 } from '../routes';
 import TabNavigator from '../TabNavigator/BottomTabNavigator';
 import HealthDisclaimer from '../../screens/HealthDisclaimer';
 import HealthDisclaimer2 from '../../screens/HealthDisclaimer2';
+import WeightScreen from '../../screens/weight';
+import HeightScreen from '../../screens/Height';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +31,8 @@ const AuthNavigator = () => {
       <Stack.Screen name={APP_HOME} component={TabNavigator} />
       <Stack.Screen name={HEALTHAPPROVAL} component={HealthDisclaimer} />
       <Stack.Screen name={HEALTHDISCLAIMER} component={HealthDisclaimer2} />
+      <Stack.Screen name={WEIGHT} component={WeightScreen} />
+      <Stack.Screen name={HEIGHT} component={HeightScreen} />
     </Stack.Navigator>
   );
 };
