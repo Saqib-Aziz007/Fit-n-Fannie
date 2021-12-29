@@ -1,12 +1,9 @@
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
-import {API_URL, API_TOKEN} from '@env';
-import {POPPINS_ITALIC} from './assets/fonts/fonts';
 import {NavigationContainer} from '@react-navigation/native';
-import TabNavigator from './navigation/TabNavigator';
-import HealthDisclaimer from './screens/HealthDisclaimer';
-import HealthDisclaimer2 from './screens/HealthDisclaimer2';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AuthNavigator from './navigation/TabNavigator/AuthNavigator';
 
+const stack = createNativeStackNavigator();
 const App = () => {
   return (
     // <SafeAreaView>
@@ -21,10 +18,17 @@ const App = () => {
     //     </Text>
     //   </View>
     // </SafeAreaView>
+<<<<<<< HEAD
     // <NavigationContainer>
     //   <TabNavigator />
     // </NavigationContainer>
     <HealthDisclaimer />
+=======
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+    // <HealthDisclaimer2 />
+>>>>>>> b3c416163dc8be2cb9221c8e198ef844795767c3
   );
 };
 

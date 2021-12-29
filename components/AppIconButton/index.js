@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {Alert, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {colors} from '../constants/constants';
 import {styles} from './styles';
@@ -13,7 +13,7 @@ const AppIconButton = ({
   style,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} style={{zIndex: 100}}>
       <View
         style={{
           ...styles.AppIconButton,
@@ -21,6 +21,7 @@ const AppIconButton = ({
           width: size,
           borderRadius: size / 2,
           backgroundColor: backgroundColor,
+          // zIndex: 100,
           ...style,
         }}>
         <Icon name={icon} size={size / 2} color={iconColor} />
