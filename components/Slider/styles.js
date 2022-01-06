@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
   },
   trackThumbComponent: {
-    height: 20,
-    width: 20,
+    height: 25,
+    width: 25,
     borderRadius: 17.5,
     backgroundColor: 'transparent',
     borderWidth: 5,

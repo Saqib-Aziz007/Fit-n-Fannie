@@ -7,7 +7,7 @@ import {colors} from '../../components/constants/constants';
 import AppToggleButton from '../../components/CustomButton';
 import AppButton from '../../components/AppButton';
 import {useNavigation} from '@react-navigation/native';
-import {AGE, HEIGHT} from '../../navigation/routes';
+import {AGE} from '../../navigation/routes';
 import {styles} from './styles';
 import WeightScreen from '../weight';
 
@@ -23,36 +23,37 @@ const HeightScreen = ({navigation, route}) => {
           size={32}
           onPress={() => navigation.goBack()}
         />
-        <Text style={styles.screenTitle}>Account Setup</Text>
-        <View style={styles.progressBar}></View>
-        <Text style={styles.title}>HEIGHT</Text>
-        <TextInput
-          onChangeText={setHeight}
-          keyboardType="numeric"
-          style={styles.input}
-        />
-        <AppToggleButton
-          state1="FT"
-          state2="CM"
-          onPress={setHeightUnit}
-          style={{alignSelf: 'center', marginTop: 25}}
-        />
+        <View style={{height: '100%'}}>
+          <Text style={styles.screenTitle}>Account Setup</Text>
+          <View style={styles.progressBar}></View>
+          <Text style={styles.title}>HEIGHT</Text>
+          <TextInput
+            onChangeText={setHeight}
+            keyboardType="numeric"
+            style={styles.input}
+          />
+          <AppToggleButton
+            state1="FT"
+            state2="CM"
+            onPress={setHeightUnit}
+            style={{alignSelf: 'center', marginTop: 25}}
+          />
+        </View>
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}
+            // onPress={() =>
+            //   console.log('HeightScreen on submit::::', {
+            //     ...route.params,
+            //     Height: {height, HeightUnit},
+            //   })
+            // }
             onPress={() =>
-              console.log('HeightScreen on submit::::', {
               navigation.navigate(AGE, {
                 ...route.params,
                 Height: {height, HeightUnit},
               })
             }
-            // onPress={() =>
-            //   navigation.navigate(HEIGHT, {
-            //     ...route.params,
-            //     Height: {height, HeightUnit},
-            //   })
-            // }
           />
         </View>
       </View>

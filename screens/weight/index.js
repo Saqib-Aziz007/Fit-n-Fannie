@@ -22,21 +22,22 @@ const WeightScreen = ({navigation, route}) => {
           size={32}
           onPress={() => navigation.goBack()}
         />
-        <Text style={styles.screenTitle}>Account Setup</Text>
-        <View style={styles.progressBar}></View>
-        <Text style={styles.title}>Weight</Text>
-        <TextInput
-          onChangeText={setWeight}
-          keyboardType="numeric"
-          style={styles.input}
-        />
-        <AppToggleButton
-          state1="LBS"
-          state2="KG"
-          onPress={setWeightUnit}
-          style={{alignSelf: 'center', marginTop: 25}}
-        />
-
+        <View style={{height: '100%'}}>
+          <Text style={styles.screenTitle}>Account Setup</Text>
+          <View style={styles.progressBar}></View>
+          <Text style={styles.title}>Weight</Text>
+          <TextInput
+            onChangeText={setWeight}
+            keyboardType="numeric"
+            style={styles.input}
+          />
+          <AppToggleButton
+            state1="LBS"
+            state2="KG"
+            onPress={setWeightUnit}
+            style={{alignSelf: 'center', marginTop: 25}}
+          />
+        </View>
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}
