@@ -40,18 +40,19 @@ const HeightScreen = ({navigation, route}) => {
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}
-            // onPress={() =>
-            //   console.log('HeightScreen on submit::::', {
-            //     ...route.params,
-            //     Height: {height, HeightUnit},
-            //   })
-            // }
             onPress={() =>
+              console.log('HeightScreen on submit::::', {
               navigation.navigate(AGE, {
                 ...route.params,
                 Height: {height, HeightUnit},
               })
             }
+            // onPress={() =>
+            //   navigation.navigate(HEIGHT, {
+            //     ...route.params,
+            //     Height: {height, HeightUnit},
+            //   })
+            // }
           />
         </View>
       </View>
