@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "804068186332",
+    "project_id": "fnf-project-19059",
+    "storage_bucket": "fnf-project-19059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804068186332:android:f8df9ec5d440c5a787bc19",
+        "android_client_info": {
+          "package_name": "com.boilerplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804068186332-9id36vegugloltb9tebuju2g2le627pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV_O4gzfauWb2-R-LMGxUAMxfs_bka0CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804068186332-9id36vegugloltb9tebuju2g2le627pm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "804068186332-hadblq90oo6t6jpadn0o0s4sq17nun1d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.BoilerPlate"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

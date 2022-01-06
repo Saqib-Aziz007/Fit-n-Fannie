@@ -1,41 +1,34 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import {colors} from '../constants/constants';
 const {width, height} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    // width: '100%',
-    // height: '80%',
-    // height: '100%',
-    // width: '60%',
-    width: width,
+    width: width - 58,
     height: height,
-    // flex: 1,
-    // backgroundColor: 'lightgreen',
-    padding: 20,
-    // margin: 10,
+    padding: 24,
   },
   questionMainContainer: {},
   noText: {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 14,
     fontWeight: '300',
+    marginVertical: 10,
+    // fontFamily: 'Roboto',
   },
-  questionContainer: {
-    // justifyContent: 'flex-start',
-    // width: '100%',
-  },
+  questionContainer: {},
   question: {
-    fontWeight: 'bold',
-    fontSize: 28,
+    fontWeight: '700',
+    fontSize: 20,
     color: 'black',
+    // fontFamily: 'Roboto',
   },
   optionCard: {
-    backgroundColor: 'lightblue',
+    backgroundColor: colors.APP_COLOR_WHITE,
     marginVertical: 20,
-    // width: '100%',
     paddingVertical: 20,
-    // elevation: 8,
     borderRadius: 10,
     paddingHorizontal: 15,
+    height: '52%',
   },
 });

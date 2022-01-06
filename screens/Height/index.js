@@ -7,7 +7,7 @@ import {colors} from '../../components/constants/constants';
 import AppToggleButton from '../../components/CustomButton';
 import AppButton from '../../components/AppButton';
 import {useNavigation} from '@react-navigation/native';
-import {HEIGHT} from '../../navigation/routes';
+import {AGE, HEIGHT} from '../../navigation/routes';
 import {styles} from './styles';
 import WeightScreen from '../weight';
 
@@ -22,7 +22,6 @@ const HeightScreen = ({navigation, route}) => {
           icon={'chevron-left'}
           size={32}
           onPress={() => navigation.goBack()}
-          //   style={{position: 'absolute'}}
         />
         <Text style={styles.screenTitle}>Account Setup</Text>
         <View style={styles.progressBar}></View>
@@ -30,7 +29,6 @@ const HeightScreen = ({navigation, route}) => {
         <TextInput
           onChangeText={setHeight}
           keyboardType="numeric"
-          //   selectionColor={colors.APP_COLOR_LIGHT2}
           style={styles.input}
         />
         <AppToggleButton
@@ -44,6 +42,7 @@ const HeightScreen = ({navigation, route}) => {
             title={'NEXT'}
             onPress={() =>
               console.log('HeightScreen on submit::::', {
+              navigation.navigate(AGE, {
                 ...route.params,
                 Height: {height, HeightUnit},
               })
