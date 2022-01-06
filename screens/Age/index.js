@@ -1,16 +1,10 @@
 import React, {useState} from 'react';
-import {Text, View, Platform, Alert, ScrollView} from 'react-native';
-import {TextInput} from 'react-native-paper';
-import {OPENSANS_REGULAR, POPPINS_BOLD} from '../../assets/fonts/fonts';
+import {Text, View, ScrollView} from 'react-native';
 import AppIconButton from '../../components/AppIconButton';
-import {colors} from '../../components/constants/constants';
-import AppToggleButton from '../../components/CustomButton';
 import AppButton from '../../components/AppButton';
-import {useNavigation} from '@react-navigation/native';
-import {HEIGHT} from '../../navigation/routes';
 import {styles} from './styles';
-import WeightScreen from '../weight';
 import AppSlider from '../../components/Slider';
+import {GENDER} from '../../navigation/routes';
 
 const AgeScreen = ({navigation, route}) => {
   console.log('AgeScreen::::', route?.params);
@@ -23,11 +17,16 @@ const AgeScreen = ({navigation, route}) => {
           size={32}
           onPress={() => navigation.goBack()}
         />
-        <Text style={styles.screenTitle}>Account Setup</Text>
-        <View style={styles.progressBar}></View>
-        <Text style={styles.title}>Age</Text>
-        <AppSlider onValueChange={setAge} renderValue={Age} />
-        <Text style={styles.subTitle}>years old</Text>
+        <View>
+          <Text style={styles.screenTitle}>Account Setup</Text>
+          <View style={styles.progressBar}></View>
+          <Text style={styles.title}>Age</Text>
+          <AppSlider
+            onValueChange={val => setAge(Math.floor(val))}
+            renderValue={Age}
+          />
+          <Text style={styles.subTitle}>years old</Text>
+        </View>
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}
@@ -38,7 +37,7 @@ const AgeScreen = ({navigation, route}) => {
             //   })
             // }
             onPress={() =>
-              navigation.navigate(Age, {
+              navigation.navigate(GENDER, {
                 ...route.params,
                 Age: Age,
               })

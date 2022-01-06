@@ -36,6 +36,7 @@ const WeightScreen = ({navigation, route}) => {
           onPress={setWeightUnit}
           style={{alignSelf: 'center', marginTop: 25}}
         />
+
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}

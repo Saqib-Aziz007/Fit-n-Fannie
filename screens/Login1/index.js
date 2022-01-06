@@ -13,7 +13,7 @@ import Divider from '../../components/Divider';
 import {styles} from './styles';
 import SignUp from '../Sign_Up';
 import SignIn from '../SignIn';
-import {APP_HOME} from '../../navigation/routes';
+import {APP_HOME, SIGNIN} from '../../navigation/routes';
 
 const Login1 = ({navigation}) => {
   return (
@@ -48,7 +48,7 @@ const Login1 = ({navigation}) => {
               title="LOGIN"
               onPress={() => {
                 // Alert.alert('Alert!', 'LOGIN Button Pressed!'),
-                navigation.navigate(SignIn);
+                navigation.navigate(SIGNIN);
               }}
             />
           </View>

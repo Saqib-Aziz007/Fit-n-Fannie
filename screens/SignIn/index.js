@@ -1,5 +1,5 @@
 import {Formik} from 'formik';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Alert, Image, ScrollView, Text, View} from 'react-native';
 import {styles} from './styles';
 import * as Yup from 'yup';
@@ -10,7 +10,8 @@ import AppSocialButton from '../../components/AppSocialButton.js';
 import FormInput from '../../components/FormInput';
 import AppButton from '../../components/AppButton';
 import {POPPINS_EXTRA_BOLD, POPPINS_REGULAR} from '../../assets/fonts/fonts.js';
-import {SIGNUP} from '../../navigation/routes';
+import {APP_HOME, HOME, SIGNUP} from '../../navigation/routes';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ValidationSchema = Yup.object().shape({
   name: Yup.string()
@@ -26,6 +27,16 @@ const ValidationSchema = Yup.object().shape({
 });
 
 const SignIn = ({navigation}) => {
+  // const checkUser = async () => {
+  //   const user = await AsyncStorage.getItem('user');
+  //   if (user) {
+  //     navigation.navigate(APP_HOME);
+  //   }
+  // };
+
+  useEffect(() => {
+    // checkUser();
+  }, []);
   return (
     <ScrollView
       style={{
@@ -60,7 +71,6 @@ const SignIn = ({navigation}) => {
         <View style={styles.formcontainer}>
           <Formik
             initialValues={{
-              name: '',
               email: '',
               password: '',
             }}

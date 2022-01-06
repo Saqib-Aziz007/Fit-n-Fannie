@@ -7,7 +7,7 @@ import {colors} from '../../components/constants/constants';
 import AppToggleButton from '../../components/CustomButton';
 import AppButton from '../../components/AppButton';
 import {useNavigation} from '@react-navigation/native';
-import {HEIGHT} from '../../navigation/routes';
+import {AGE, HEIGHT} from '../../navigation/routes';
 import {styles} from './styles';
 import WeightScreen from '../weight';
 
@@ -47,7 +47,7 @@ const HeightScreen = ({navigation, route}) => {
             //   })
             // }
             onPress={() =>
-              navigation.navigate(HEIGHT, {
+              navigation.navigate(AGE, {
                 ...route.params,
                 Height: {height, HeightUnit},
               })

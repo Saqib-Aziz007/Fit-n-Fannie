@@ -13,12 +13,18 @@ import {
   APP_HOME,
   WEIGHT,
   HEIGHT,
+  AGE,
+  GENDER,
+  FITNESS_QUIZ,
 } from '../routes';
 import TabNavigator from '../TabNavigator/BottomTabNavigator';
 import HealthDisclaimer from '../../screens/HealthDisclaimer';
 import HealthDisclaimer2 from '../../screens/HealthDisclaimer2';
 import WeightScreen from '../../screens/weight';
 import HeightScreen from '../../screens/Height';
+import AgeScreen from '../../screens/Age';
+import GenderScreen from '../../screens/GenderScreen';
+import FitnessQuizScreen from '../../screens/FitnessQuizScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +39,9 @@ const AuthNavigator = () => {
       <Stack.Screen name={HEALTHDISCLAIMER} component={HealthDisclaimer2} />
       <Stack.Screen name={WEIGHT} component={WeightScreen} />
       <Stack.Screen name={HEIGHT} component={HeightScreen} />
+      <Stack.Screen name={AGE} component={AgeScreen} />
+      <Stack.Screen name={GENDER} component={GenderScreen} />
+      <Stack.Screen name={FITNESS_QUIZ} component={FitnessQuizScreen} />
     </Stack.Navigator>
   );
 };
