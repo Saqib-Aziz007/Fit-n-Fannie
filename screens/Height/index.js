@@ -22,25 +22,21 @@ const HeightScreen = ({navigation, route}) => {
           icon={'chevron-left'}
           size={32}
           onPress={() => navigation.goBack()}
-          //   style={{position: 'absolute'}}
         />
-        <View style={{height: '100%'}}>
-          <Text style={styles.screenTitle}>Account Setup</Text>
-          <View style={styles.progressBar}></View>
-          <Text style={styles.title}>HEIGHT</Text>
-          <TextInput
-            onChangeText={setHeight}
-            keyboardType="numeric"
-            //   selectionColor={colors.APP_COLOR_LIGHT2}
-            style={styles.input}
-          />
-          <AppToggleButton
-            state1="FT"
-            state2="CM"
-            onPress={setHeightUnit}
-            style={{alignSelf: 'center', marginTop: 25}}
-          />
-        </View>
+        <Text style={styles.screenTitle}>Account Setup</Text>
+        <View style={styles.progressBar}></View>
+        <Text style={styles.title}>HEIGHT</Text>
+        <TextInput
+          onChangeText={setHeight}
+          keyboardType="numeric"
+          style={styles.input}
+        />
+        <AppToggleButton
+          state1="FT"
+          state2="CM"
+          onPress={setHeightUnit}
+          style={{alignSelf: 'center', marginTop: 25}}
+        />
         <View style={styles.next}>
           <AppButton
             title={'NEXT'}

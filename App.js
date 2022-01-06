@@ -29,6 +29,7 @@ const App = () => {
     <NavigationContainer>
       <AuthNavigator />
     </NavigationContainer>
+
     // <SafeAreaView>
     //   <GenderCard
     //     // changeColor={false}

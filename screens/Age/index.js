@@ -7,9 +7,8 @@ import AppSlider from '../../components/Slider';
 import {GENDER} from '../../navigation/routes';
 
 const AgeScreen = ({navigation, route}) => {
-  console.log('AgeScreen::::', route.params);
+  console.log('AgeScreen::::', route?.params);
   const [Age, setAge] = useState(18);
-  //   const [AgeUnit, setAgeUnit] = useState('FT');
   return (
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
@@ -17,7 +16,6 @@ const AgeScreen = ({navigation, route}) => {
           icon={'chevron-left'}
           size={32}
           onPress={() => navigation.goBack()}
-          //   style={{position: 'absolute'}}
         />
         <View>
           <Text style={styles.screenTitle}>Account Setup</Text>
