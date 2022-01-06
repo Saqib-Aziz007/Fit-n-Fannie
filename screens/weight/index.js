@@ -11,7 +11,7 @@ import {HEIGHT} from '../../navigation/routes';
 import {styles} from './styles';
 
 const WeightScreen = ({navigation, route}) => {
-  console.log('WightScreen', route.params);
+  console.log('WightScreen', route?.params);
   const [WeightUnit, setWeightUnit] = useState('LBS');
   const [weight, setWeight] = useState();
   return (
@@ -21,7 +21,6 @@ const WeightScreen = ({navigation, route}) => {
           icon={'chevron-left'}
           size={32}
           onPress={() => navigation.goBack()}
-          //   style={{position: 'absolute'}}
         />
         <Text style={styles.screenTitle}>Account Setup</Text>
         <View style={styles.progressBar}></View>
@@ -29,7 +28,6 @@ const WeightScreen = ({navigation, route}) => {
         <TextInput
           onChangeText={setWeight}
           keyboardType="numeric"
-          //   selectionColor={colors.APP_COLOR_LIGHT2}
           style={styles.input}
         />
         <AppToggleButton

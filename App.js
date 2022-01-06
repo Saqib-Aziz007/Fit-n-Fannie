@@ -23,10 +23,10 @@ const App = () => {
     //     </Text>
     //   </View>
     // </SafeAreaView>
-    // <NavigationContainer>
-    //   <AuthNavigator />
-    // </NavigationContainer>
-    <AgeScreen />
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+    // <AgeScreen />
   );
 };
 
