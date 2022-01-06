@@ -7,6 +7,10 @@ import WeightScreen from './screens/weight';
 import HeightScreen from './screens/Height';
 import AgeScreen from './screens/Age';
 import GenderCard from './components/GenderCard';
+import {images} from './components/constants/constants';
+import GenderScreen from './screens/GenderScreen';
+import {SafeAreaView} from 'react-native';
+import FitnessQuizScreen from './screens/FitnessQuizScreen';
 
 const App = () => {
   return (
@@ -22,10 +26,20 @@ const App = () => {
     //     </Text>
     //   </View>
     // </SafeAreaView>
-    // <NavigationContainer>
-    //   <AuthNavigator />
-    // </NavigationContainer>
-    <GenderCard />
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+    // <SafeAreaView>
+    //   <GenderCard
+    //     // changeColor={false}
+    //     image={images.female}
+    //     onPress={val => alert(val)}
+    //     imageHeight={45}
+    //     imageWidth={33}
+    //   />
+    // </SafeAreaView>
+    // <GenderScreen />
+    // <FitnessQuizScreen />
   );
 };
 

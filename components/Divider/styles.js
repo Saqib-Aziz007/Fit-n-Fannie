@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   divider: {
-    height: 2,
+    height: 1,
     // width: '30%',
     flex: 1,
     backgroundColor: colors.APP_SECONDARY_COLOR,

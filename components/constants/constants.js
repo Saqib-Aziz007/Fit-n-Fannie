@@ -14,6 +14,9 @@ export const images = {
   twitter: require('../../assets/icons/twitter.png'),
   login1background: require('../../assets/images/login1background.png'),
   APP_LOGO: require('../../assets/images/Logo.png'),
+  female: require('../../assets/icons/female.png'),
+  male: require('../../assets/icons/male.png'),
+  nonBinary: require('../../assets/icons/nonBinary.png'),
 };
 
 export const fontColor = {
@@ -65,6 +68,26 @@ export const Questions = [
       {value: 1, label: 'No energy'},
       {value: 2, label: 'No motivation'},
       {value: 3, label: 'No time'},
+      {value: 4, label: 'No support network'},
+      {value: 5, label: 'To live longer'},
+    ],
+  },
+  {
+    id: 3,
+    question: 'How physically active are you?',
+    options: [
+      {value: 1, label: 'Pulvinar nunc'},
+      {value: 2, label: 'Aliquam malesuada'},
+      {value: 3, label: 'Posuere et'},
+    ],
+  },
+  {
+    id: 4,
+    question: 'Have you consulted with a doctor and are you clear to exercise?',
+    options: [
+      {value: 1, label: 'Viverra porttitor diam'},
+      {value: 2, label: 'Aenean nibh gravida'},
+      {value: 3, label: 'Tellus nunc facilisis'},
       {value: 4, label: 'No support network'},
       {value: 5, label: 'To live longer'},
     ],

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   container: {paddingHorizontal: 30, marginTop: 50},
   screenTitle: {
     textAlign: 'center',
-    fontFamily: OPENSANS_REGULAR,
+    // fontFamily: OPENSANS_REGULAR,
     fontWeight: '700',
     fontSize: 14,
     color: colors.APP_SECONDARY_COLOR,
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: '600',
     lineHeight: 45,
-    fontFamily: POPPINS_BOLD,
+    // fontFamily: POPPINS_BOLD,
     marginTop: 80,
     textAlign: 'center',
   },
@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
   },
   next: {
     justifyContent: 'flex-end',
-    height: '40%',
+    // height: '40%',
     // backgroundColor: 'pink',
     paddingHorizontal: 25,
   },

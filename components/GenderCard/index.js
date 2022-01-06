@@ -1,30 +1,47 @@
-import React from 'react';
-import {Text, View} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import React, {useEffect, useState} from 'react';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../constants/constants';
 import {styles} from './styles';
 
 const GenderCard = ({
-  iconName = 'gender-male',
   iconSubtitle = 'Male',
-  iconStyle,
   iconSubtitleStyle,
   containerStyle,
-  iconColor = colors.APP_COLOR_LIGHT3,
-  iconSize = 50,
+  onPress,
+  image,
+  imageHeight = 60,
+  imageWidth = 60,
+  changeColor,
 }) => {
+  // const [changeColor, setChangeColor] = useState(false);
+
   return (
-    <View style={[styles.container, containerStyle]}>
-      <Icon
-        name={iconName}
-        color={iconColor}
-        size={iconSize}
-        style={[styles.icon, iconStyle]}
+    <TouchableOpacity
+      // onPressIn={() => setPressed(true)}
+      onPress={() => {
+        onPress(iconSubtitle);
+        // setChangeColor(!changeColor);
+      }}
+      style={[
+        styles.container,
+        {
+          borderColor: changeColor
+            ? colors.APP_PRIMARY_COLOR
+            : colors.APP_COLOR_WHITE,
+        },
+        containerStyle,
+      ]}>
+      <Image
+        // resizeMode="center"
+        source={image}
+        // height={55}
+        // width={55}
+        style={{height: imageHeight, width: imageWidth, marginVertical: 5}}
       />
       <Text style={[styles.iconSubtitle, iconSubtitleStyle]}>
         {iconSubtitle}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

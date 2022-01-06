@@ -7,3 +7,6 @@ export const HEALTHDISCLAIMER = 'HealthDiscalimer';
 export const APP_HOME = 'HOME';
 export const WEIGHT = 'Weight';
 export const HEIGHT = 'Height';
+export const AGE = 'Age';
+export const GENDER = 'Gender';
+export const FITNESS_QUIZ = 'Fitness Quiz';
