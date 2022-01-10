@@ -39,7 +39,7 @@ const AgeScreen = ({navigation, route}) => {
             onPress={() =>
               navigation.navigate(GENDER, {
                 ...route.params,
-                Age: {Age},
+                Age: Age,
               })
             }
           />

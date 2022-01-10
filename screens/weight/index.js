@@ -11,7 +11,7 @@ import {HEIGHT} from '../../navigation/routes';
 import {styles} from './styles';
 
 const WeightScreen = ({navigation, route}) => {
-  console.log('WightScreen', route?.params);
+  // console.log('WightScreen', route?.params);
   const [WeightUnit, setWeightUnit] = useState('LBS');
   const [weight, setWeight] = useState();
   return (

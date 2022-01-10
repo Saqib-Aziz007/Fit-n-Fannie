@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: colors.APP_COLOR_LIGHT1,
     height: 80,
-    marginVertical: 5,
+    marginVertical: 2,
     paddingHorizontal: 20,
     justifyContent: 'center',
   },
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
   rightText: {
     fontSize: 16,
     fontWeight: '400',
-    width: '65%',
+    // width: '65%',
     color: colors.APP_SECONDARY_COLOR,
     textAlign: 'right',
     fontStyle: 'italic',

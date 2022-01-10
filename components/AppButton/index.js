@@ -3,7 +3,7 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import {colors} from '../constants/constants';
 import {styles} from './styles';
 
-const Button = ({
+const AppButton = ({
   title,
   isOutlined = false,
   onPress,
@@ -48,4 +48,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default AppButton;

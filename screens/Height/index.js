@@ -12,7 +12,7 @@ import {styles} from './styles';
 import WeightScreen from '../weight';
 
 const HeightScreen = ({navigation, route}) => {
-  console.log('WightScreen', route.params);
+  // console.log('WightScreen', route.params);
   const [height, setHeight] = useState();
   const [HeightUnit, setHeightUnit] = useState('FT');
   return (
