@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthNavigator from './navigation/AuthNavigation/AuthNavigator';
 import HealthDisclaimer from './screens/HealthDisclaimer';
@@ -11,8 +11,17 @@ import {images} from './components/constants/constants';
 import GenderScreen from './screens/GenderScreen';
 import {SafeAreaView} from 'react-native';
 import FitnessQuizScreen from './screens/FitnessQuizScreen';
+import {
+  requestUserPermission,
+  NotificationListener,
+} from './utils/PushNotification/PushNotification';
+import Profile from './screens/Profile';
 
 const App = () => {
+  useEffect(() => {
+    requestUserPermission();
+    NotificationListener();
+  }, []);
   return (
     // <SafeAreaView>
     //   <View>
@@ -39,8 +48,8 @@ const App = () => {
     //     imageWidth={33}
     //   />
     // </SafeAreaView>
-    // <GenderScreen />
-    // <FitnessQuizScreen />
+    // <HeightScreen />
+    // <Profile />
   );
 };
 
