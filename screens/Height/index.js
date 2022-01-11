@@ -23,7 +23,7 @@ const HeightScreen = ({navigation, route}) => {
           size={32}
           onPress={() => navigation.goBack()}
         />
-        <View>
+        <View style={{height: '100%'}}>
           <Text style={styles.screenTitle}>Account Setup</Text>
           <View style={styles.progressBar}></View>
           <Text style={styles.title}>HEIGHT</Text>
@@ -50,7 +50,7 @@ const HeightScreen = ({navigation, route}) => {
             //   })
             // }
             onPress={() =>
-              navigation.navigate(HEIGHT, {
+              navigation.navigate(AGE, {
                 ...route.params,
                 Height: {height, HeightUnit},
               })

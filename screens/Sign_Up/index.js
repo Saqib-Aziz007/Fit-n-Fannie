@@ -136,7 +136,7 @@ const SignUp = ({navigation}) => {
                     <AppButton
                       title="SIGN UP"
                       onPress={handleSubmit}
-                      style={{marginTop: 15, marginBottom: 40}}
+                      style={{marginTop: 15, marginBottom: 25}}
                     />
                   </View>
                 );
@@ -145,8 +145,12 @@ const SignUp = ({navigation}) => {
           </View>
           <Divider text="or join with" />
           <View style={styles.socialbuttoncontainer}>
-            <AppSocialButton icon={'facebook'} onPress={() => alert('alert')} />
-            <AppSocialButton icon={'google'} onPress={GoogleSignIn} />
+            <AppSocialButton
+              size={40}
+              icon={'facebook'}
+              onPress={() => alert('alert')}
+            />
+            <AppSocialButton size={40} icon={'google'} onPress={GoogleSignIn} />
           </View>
           <View style={styles.lastlinecontainer}>
             <Text style={styles.lastline}>

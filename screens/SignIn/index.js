@@ -94,7 +94,7 @@ const SignIn = ({navigation}) => {
                     onPress={handleSubmit}
                     style={{marginTop: 15, marginBottom: 15}}
                   />
-                  <View style={{alignSelf: 'center', marginBottom: 35}}>
+                  <View style={{alignSelf: 'center', marginBottom: 30}}>
                     <Text
                       style={{
                         fontSize: 18,
@@ -122,12 +122,14 @@ const SignIn = ({navigation}) => {
         <View style={styles.socialbuttoncontainer}>
           <AppSocialButton
             icon={'facebook'}
+            size={40}
             onPress={() =>
               Alert.alert('Alert!', 'Facebook Social Button Pressed!')
             }
           />
           <AppSocialButton
             icon={'google'}
+            size={40}
             onPress={() =>
               Alert.alert('Alert!', 'Google Social Button Pressed!')
             }
