@@ -145,7 +145,7 @@ const SignUp = ({navigation}) => {
           </View>
           <Divider text="or join with" />
           <View style={styles.socialbuttoncontainer}>
-            <AppSocialButton icon={'facebook'} onPress={onFaceBookLogin} />
+            <AppSocialButton icon={'facebook'} onPress={() => alert('alert')} />
             <AppSocialButton icon={'google'} onPress={GoogleSignIn} />
           </View>
           <View style={styles.lastlinecontainer}>

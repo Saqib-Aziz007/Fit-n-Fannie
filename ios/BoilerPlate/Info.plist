@@ -30,27 +30,7 @@
 				<string>com.googleusercontent.apps.1073384982468-8lkbt1l4p8dk9jnrd8po2ee5l28ob5mm</string>
 			</array>
 		</dict>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb782951725996108</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>782951725996108</string>
-    <key>FacebookDisplayName</key>
-    <string>Fit n Fannie</string>
 	</array>
-  <key>LSApplicationQueriesSchemes</key>
-  <array>
-    <string>fbapi</string>
-    <string>fb-messenger-api</string>
-    <string>fbauth2</string>
-    <string>fbshareextension</string>
-  </array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
