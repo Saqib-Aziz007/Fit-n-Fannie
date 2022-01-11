@@ -4,7 +4,7 @@ const {width, height} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    width: width - 58,
+    width: width - 56,
     height: height,
     padding: 24,
   },
@@ -29,6 +29,6 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
     borderRadius: 10,
     paddingHorizontal: 15,
-    height: '52%',
+    height: '50%',
   },
 });

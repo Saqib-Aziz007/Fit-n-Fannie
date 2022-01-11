@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingVertical: 25,
+    paddingHorizontal: 30,
     // marginVertical: -5,
   },
   lastlinecontainer: {width: '100%', alignItems: 'center'},
