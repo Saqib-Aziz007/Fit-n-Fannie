@@ -10,10 +10,10 @@ const HealthDisclaimer2 = ({navigation}) => {
       <View style={{backgroundColor: colors.APP_COLOR_LIGHT1}}>
         <AppIconButton
           icon={'close'}
-          size={60}
+          size={50}
           iconColor={colors.APP_COLOR_LIGHT3}
           backgroundColor={colors.APP_COLOR_LIGHT1}
-          style={{alignSelf: 'flex-end'}}
+          style={{alignSelf: 'flex-end', marginTop: 0}}
           onPress={() => navigation.goBack()}
         />
       </View>

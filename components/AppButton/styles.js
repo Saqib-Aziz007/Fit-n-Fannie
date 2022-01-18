@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 32,
     backgroundColor: colors.APP_PRIMARY_COLOR,
-    marginVertical: 10,
+    // marginVertical: 10,
   },
   SecondaryAppButtonTitle: {
     fontSize: 20,
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 32,
     backgroundColor: colors.APP_COLOR_LIGHT3,
-    marginVertical: 10,
+    // marginVertical: 10,
   },
   PrimaryAppButtonTitle: {
     fontSize: 20,
@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     borderRadius: 32,
     borderColor: colors.APP_COLOR_LIGHT3,
     borderWidth: 3,
-    marginVertical: 10,
+    // marginVertical: 10,
   },
   PrimayOutlinedButtonTitle: {
     fontSize: 20,
@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
     borderRadius: 32,
     borderColor: colors.APP_PRIMARY_COLOR,
     borderWidth: 3,
-    marginVertical: 10,
+    // marginVertical: 10,
   },
   SecondaryOutlinedButtonTitle: {
     fontSize: 20,

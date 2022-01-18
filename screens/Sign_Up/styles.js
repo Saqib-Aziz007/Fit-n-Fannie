@@ -1,10 +1,11 @@
 import {StyleSheet} from 'react-native';
+import {POPPINS_REGULAR} from '../../assets/fonts/fonts';
 import {colors} from '../../components/constants/constants';
 
 export const styles = StyleSheet.create({
   logocontainer: {
     backgroundColor: colors.APP_COLOR_LIGHT2,
-    height: '50%',
+    height: '40%',
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
     justifyContent: 'center',
@@ -30,8 +31,18 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingVertical: 25,
     paddingHorizontal: 30,
-    // marginVertical: -5,
+    // marginVertical: 5,
+    backgroundColor: 'transparent',
   },
-  lastlinecontainer: {width: '100%', alignItems: 'center'},
-  lastline: {fontSize: 11, fontWeight: '400'},
+  lastline: {
+    fontSize: 11,
+    fontWeight: '400',
+    textAlign: 'center',
+    // fontFamily: POPPINS_REGULAR,
+    color: colors.APP_SECONDARY_COLOR,
+    // backgroundColor: 'pink',
+  },
+  lastlinecontainer: {
+    marginBottom: 30,
+  },
 });

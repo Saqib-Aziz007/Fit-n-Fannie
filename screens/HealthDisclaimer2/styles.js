@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 50,
     lineHeight: 25,
+    textAlign: 'justify',
   },
   title: {
     color: colors.APP_SECONDARY_COLOR,

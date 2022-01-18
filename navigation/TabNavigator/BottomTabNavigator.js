@@ -7,6 +7,7 @@ import {colors} from '../../components/constants/constants';
 import Login1 from '../../screens/Login1';
 import Profile from '../../screens/Profile';
 import MembershipScreen from '../../screens/MemberShip';
+import {MEMBERSHIP_SCREEN, PROFILE_SCREEN} from '../routes';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -17,7 +18,7 @@ const TabNavigator = () => {
       inactiveColor={colors.APP_SECONDARY_COLOR}
       barStyle={{backgroundColor: colors.APP_COLOR_WHITE}}>
       <Tab.Screen
-        name="Home"
+        name={HOME_SCREEN}
         component={Home}
         options={{
           tabBarIcon: ({color = colors.APP_PRIMARY_COLOR}) => (
@@ -26,7 +27,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name={PROFILE_SCREEN}
         component={Profile}
         options={{
           tabBarIcon: ({color = colors.APP_PRIMARY_COLOR}) => (
@@ -35,7 +36,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="settings"
+        name={MEMBERSHIP_SCREEN}
         component={MembershipScreen}
         options={{
           tabBarIcon: ({color = colors.APP_PRIMARY_COLOR}) => (

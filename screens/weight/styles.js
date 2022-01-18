@@ -4,7 +4,7 @@ import {colors} from '../../components/constants/constants';
 
 export const styles = StyleSheet.create({
   scrollView: {backgroundColor: colors.APP_COLOR_LIGHT1, flex: 1},
-  container: {paddingHorizontal: 30, marginTop: 50},
+  container: {paddingHorizontal: 30, backgroundColor: 'red', flex: 1},
   screenTitle: {
     textAlign: 'center',
     // fontFamily: OPENSANS_REGULAR,
@@ -35,9 +35,11 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     borderColor: 'red',
     marginTop: 80,
+    color: colors.APP_SECONDARY_COLOR,
   },
   next: {
+    height: '10%',
     justifyContent: 'flex-end',
-    paddingHorizontal: 25,
+    paddingHorizontal: 40,
   },
 });

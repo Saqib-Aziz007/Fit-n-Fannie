@@ -10,7 +10,7 @@ import AppSocialButton from '../../components/AppSocialButton.js';
 import FormInput from '../../components/FormInput';
 import AppButton from '../../components/AppButton';
 import {POPPINS_EXTRA_BOLD, POPPINS_REGULAR} from '../../assets/fonts/fonts.js';
-import {APP_HOME, HOME, SIGNUP} from '../../navigation/routes';
+import {APP_HOME, HOME, SIGNUP, SIGN_UP_SCREEN} from '../../navigation/routes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ValidationSchema = Yup.object().shape({
@@ -75,7 +75,7 @@ const SignIn = ({navigation}) => {
               password: '',
             }}
             validationSchema={ValidationSchema}
-            onSubmit={values => Alert.alert('Alert!', JSON.stringify(values))}>
+            onSubmit={values => navigation.Navigate(APP_HOME, values)}>
             {({values, handleChange, handleSubmit, errors, touched}) => {
               return (
                 <View style={{marginTop: 40}}>
@@ -103,7 +103,7 @@ const SignIn = ({navigation}) => {
                       }}>
                       {"Don't have an account? "}
                       <Text
-                        onPress={() => navigation.navigate(SIGNUP)}
+                        onPress={() => navigation.navigate(SIGN_UP_SCREEN)}
                         style={{
                           // fontFamily: POPPINS_EXTRA_BOLD,
                           fontWeight: '700',
