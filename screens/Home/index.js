@@ -1,8 +1,6 @@
 import React from 'react';
 import {Image, SafeAreaView, ScrollView, Text, View} from 'react-native';
-// import LineGraph from '../../component/graph';
 import {colors, images} from '../../components/constants/constants';
-// import {APP_BLACK, APP_LIGHT2} from '../../constants/constants';
 import {styles} from './styles';
 import LineGraph from '../../components/LineGraph';
 
@@ -18,7 +16,6 @@ const data = [
 
 const Home = () => {
   return (
-    // <SafeAreaView style={styles.scrollView}>
     <ScrollView style={styles.scrollView}>
       <View style={styles.container}>
         <View style={styles.prpfileContainer}>
@@ -53,7 +50,6 @@ const Home = () => {
         <Text style={styles.excerciseDateStyle}>{'Legs, Belly'}</Text>
       </View>
     </ScrollView>
-    // </SafeAreaView>
   );
 };
 

@@ -4,46 +4,43 @@ import AppIconButton from '../../components/AppIconButton';
 import AppButton from '../../components/AppButton';
 import {styles} from './styles';
 import AppSlider from '../../components/Slider';
-import {GENDER} from '../../navigation/routes';
+import {GENDER_SCREEN} from '../../navigation/routes';
 
 const AgeScreen = ({navigation, route}) => {
   console.log('AgeScreen::::', route?.params);
   const [Age, setAge] = useState(18);
   return (
     <ScrollView style={styles.scrollView}>
-      <View style={styles.container}>
-        <AppIconButton
-          icon={'chevron-left'}
-          size={32}
-          onPress={() => navigation.goBack()}
+      <AppIconButton
+        icon={'chevron-left'}
+        size={32}
+        onPress={() => navigation.goBack()}
+      />
+      <View style={{paddingHorizontal: 40, marginBottom: 100}}>
+        <Text style={styles.screenTitle}>Account Setup</Text>
+        <View style={styles.progressBar}></View>
+        <Text style={styles.title}>Age</Text>
+        <AppSlider
+          onValueChange={val => setAge(Math.floor(val))}
+          renderValue={Age}
         />
-        <View>
-          <Text style={styles.screenTitle}>Account Setup</Text>
-          <View style={styles.progressBar}></View>
-          <Text style={styles.title}>Age</Text>
-          <AppSlider
-            onValueChange={val => setAge(Math.floor(val))}
-            renderValue={Age}
-          />
-          <Text style={styles.subTitle}>years old</Text>
-        </View>
-        <View style={styles.next}>
-          <AppButton
-            title={'NEXT'}
-            onPress={() =>
-              console.log('AgeScreen on submit::::', {
-                ...route.params,
-                Age: Age,
-              })
-            }
-            onPress={() =>
-              navigation.navigate(GENDER, {
-                ...route.params,
-                Age: Age,
-              })
-            }
-          />
-        </View>
+        <Text style={styles.subTitle}>years old</Text>
+      </View>
+      <View
+        style={{
+          paddingHorizontal: 40,
+          marginVertical: Platform.OS === 'ios' ? 100 : 50,
+        }}>
+        <AppButton
+          title={'NEXT'}
+          style={{paddingHorizontal: 40}}
+          onPress={() =>
+            navigation.navigate(GENDER_SCREEN, {
+              ...route.params,
+              Height: Age,
+            })
+          }
+        />
       </View>
     </ScrollView>
   );

@@ -17,6 +17,7 @@ import {
 } from './utils/PushNotification/PushNotification';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import Profile from './screens/Profile';
+import GoalScreen from './screens/GoalScreen';
 
 const App = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const App = () => {
     //   />
     // </SafeAreaView>
     // <HeightScreen />
-    // <Profile />
+    // <GoalScreen />
   );
 };
 

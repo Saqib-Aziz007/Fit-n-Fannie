@@ -7,48 +7,51 @@ import {colors} from '../../components/constants/constants';
 import AppToggleButton from '../../components/CustomButton';
 import AppButton from '../../components/AppButton';
 import {useNavigation} from '@react-navigation/native';
-import {HEIGHT} from '../../navigation/routes';
+import {HEIGHT, HEIGHT_SCREEN} from '../../navigation/routes';
 import {styles} from './styles';
 
 const WeightScreen = ({navigation, route}) => {
-  // console.log('WightScreen', route?.params);
+  console.log('WightScreen', route?.params);
   const [WeightUnit, setWeightUnit] = useState('LBS');
   const [weight, setWeight] = useState();
   return (
     <ScrollView style={styles.scrollView}>
-      <View style={styles.container}>
-        <AppIconButton
-          icon={'chevron-left'}
-          size={32}
-          onPress={() => navigation.goBack()}
+      <AppIconButton
+        icon={'chevron-left'}
+        size={32}
+        onPress={() => navigation.goBack()}
+      />
+      <View style={{paddingHorizontal: 40, marginBottom: 100}}>
+        <Text style={styles.screenTitle}>Account Setup</Text>
+        <View style={styles.progressBar}></View>
+        <Text style={styles.title}>Weight</Text>
+        <TextInput
+          onChangeText={setWeight}
+          keyboardType="numeric"
+          style={styles.input}
         />
-        <View style={{height: '100%'}}>
-          <Text style={styles.screenTitle}>Account Setup</Text>
-          <View style={styles.progressBar}></View>
-          <Text style={styles.title}>Weight</Text>
-          <TextInput
-            onChangeText={setWeight}
-            keyboardType="numeric"
-            style={styles.input}
-          />
-          <AppToggleButton
-            state1="LBS"
-            state2="KG"
-            onPress={setWeightUnit}
-            style={{alignSelf: 'center', marginTop: 25}}
-          />
-        </View>
-        <View style={styles.next}>
-          <AppButton
-            title={'NEXT'}
-            onPress={() =>
-              navigation.navigate(HEIGHT, {
-                ...route.params,
-                weight: {weight, WeightUnit},
-              })
-            }
-          />
-        </View>
+        <AppToggleButton
+          state1="LBS"
+          state2="KG"
+          onPress={setWeightUnit}
+          style={{alignSelf: 'center', marginTop: 25}}
+        />
+      </View>
+      <View
+        style={{
+          paddingHorizontal: 40,
+          marginVertical: Platform.OS === 'ios' ? 100 : 50,
+        }}>
+        <AppButton
+          title={'NEXT'}
+          style={{paddingHorizontal: 40}}
+          onPress={() =>
+            navigation.navigate(HEIGHT_SCREEN, {
+              ...route.params,
+              weight: {weight, WeightUnit},
+            })
+          }
+        />
       </View>
     </ScrollView>
   );

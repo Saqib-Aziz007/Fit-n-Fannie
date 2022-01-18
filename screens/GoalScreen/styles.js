@@ -1,10 +1,13 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {OPENSANS_REGULAR, POPPINS_BOLD} from '../../assets/fonts/fonts';
 import {colors} from '../../components/constants/constants';
 
 export const styles = StyleSheet.create({
   scrollView: {backgroundColor: colors.APP_COLOR_LIGHT1, flex: 1},
-  container: {paddingHorizontal: 30, marginTop: 50},
+  container: {
+    paddingHorizontal: 40,
+    marginTop: Platform.OS === 'ios' ? 50 : 20,
+  },
   screenTitle: {
     textAlign: 'center',
     // fontFamily: OPENSANS_REGULAR,
@@ -20,25 +23,23 @@ export const styles = StyleSheet.create({
     marginTop: 30,
   },
   title: {
-    fontSize: 32,
-    fontWeight: '600',
-    lineHeight: 45,
+    fontSize: 24,
+    fontWeight: '700',
+    lineHeight: 30,
     // fontFamily: POPPINS_BOLD,
-    marginTop: 60,
+    marginTop: 80,
     textAlign: 'center',
-    marginBottom: 20,
     color: colors.APP_SECONDARY_COLOR,
   },
   input: {
-    width: '80%',
-    backgroundColor: colors.APP_COLOR_LIGHT1,
+    height: 368,
+    width: 174,
     alignSelf: 'center',
-    textAlign: 'center',
-    borderColor: 'red',
-    marginTop: 80,
+    marginTop: 30,
   },
   next: {
     justifyContent: 'flex-end',
+    // height: '45%',
     paddingHorizontal: 25,
   },
   subTitle: {

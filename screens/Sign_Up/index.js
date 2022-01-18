@@ -16,7 +16,7 @@ import AppIconButton from '../../components/AppIconButton/index.js';
 import AppSocialButton from '../../components/AppSocialButton.js';
 import FormInput from '../../components/FormInput';
 import AppButton from '../../components/AppButton';
-import {HEALTHAPPROVAL} from '../../navigation/routes';
+import {HEALTH_APPROVAL} from '../../navigation/routes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import GoogleSignIn from '../../utils/Social_Login/GoogleSignIn';
@@ -45,7 +45,7 @@ const SignUp = ({navigation}) => {
     } catch (error) {
       console.log(error, 'error on storing userData');
     }
-    navigation.navigate(HEALTHAPPROVAL, values);
+    navigation.navigate(HEALTH_APPROVAL, values);
   };
 
   console.log(user, 'user state');
@@ -79,30 +79,32 @@ const SignUp = ({navigation}) => {
       {loading ? (
         <ActivityIndicator />
       ) : (
-        <View style={{flex: 1}}>
+        <>
           <View style={styles.logocontainer}>
-            {/* <Button title="button" onPress={() => console.log('on press')} /> */}
             <AppIconButton
               icon={'chevron-left'}
               size={32}
-              style={{position: 'absolute', left: 30, top: -25}}
+              style={{paddingTop: 0}}
               onPress={
                 () => navigation.goBack()
                 // console.log('back!!!!!')
                 //  navigation.goBack();
               }
             />
-            <View>
-              <View style={styles.logo}>
-                <Image source={images.APP_LOGO} />
-              </View>
-              <View>
-                <Text style={styles.tagline}>
-                  A habit-building exercise app designed
-                </Text>
-                <Text style={styles.tagline}>for beginners to become pros</Text>
-              </View>
+            {/* <View> */}
+            {/* <View style={styles.logo}> */}
+            <Image
+              source={images.APP_LOGO}
+              style={{alignSelf: 'center', marginBottom: 20}}
+            />
+            {/* </View> */}
+            <View style={{marginBottom: 50}}>
+              <Text style={styles.tagline}>
+                A habit-building exercise app designed
+              </Text>
+              <Text style={styles.tagline}>for beginners to become pros</Text>
             </View>
+            {/* </View> */}
           </View>
           <View style={styles.formcontainer}>
             <Formik
@@ -157,7 +159,7 @@ const SignUp = ({navigation}) => {
               We will never post anything without your permission
             </Text>
           </View>
-        </View>
+        </>
       )}
     </ScrollView>
   );

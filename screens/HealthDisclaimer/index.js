@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {
-  Alert,
   Image,
   ScrollView,
   Text,
@@ -14,7 +13,7 @@ import {colors} from '../../components/constants/constants';
 import {styles} from './styles';
 import AppButton from '../../components/AppButton';
 // import Home from '../Home';
-import {APP_HOME, HEALTHDISCLAIMER, WEIGHT} from '../../navigation/routes';
+import {HEALTH_DISCLAIMER, WEIGHT_SCREEN} from '../../navigation/routes';
 
 const HealthDisclaimer = ({navigation, route}) => {
   const [checkboxSelect, setCheckboxSelect] = useState(false);
@@ -25,7 +24,6 @@ const HealthDisclaimer = ({navigation, route}) => {
         <AppIconButton
           icon={'chevron-left'}
           size={32}
-          style={{position: 'absolute', left: 30, top: 50}}
           onPress={() => navigation.goBack()}
         />
       </View>
@@ -38,7 +36,7 @@ const HealthDisclaimer = ({navigation, route}) => {
           <TouchableWithoutFeedback
             onPress={() => {
               // Alert.alert('Alert!', 'Health & Discalaimer'),
-              navigation.navigate(HEALTHDISCLAIMER);
+              navigation.navigate(HEALTH_DISCLAIMER);
             }}>
             <Text
               style={{
@@ -73,11 +71,11 @@ const HealthDisclaimer = ({navigation, route}) => {
       </View>
       <AppButton
         title={'Accept & Continue'}
-        style={{marginHorizontal: 50}}
+        style={{marginHorizontal: 50, marginVertical: 25}}
         disabled={!checkboxSelect}
         onPress={() => {
           // Alert.alert('Alert!', 'Accept & Continue'),
-          navigation.navigate(WEIGHT, route.params);
+          navigation.navigate(WEIGHT_SCREEN, route.params);
         }}
       />
     </ScrollView>

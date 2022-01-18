@@ -9,8 +9,9 @@ export const styles = StyleSheet.create({
   backButton: {
     backgroundColor: colors.APP_COLOR_LIGHT2,
     width: '100%',
-    height: 440,
-    borderRadius: 50,
+    height: 400,
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
   },
   heading: {
     fontSize: 16,
@@ -19,7 +20,6 @@ export const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   disclaimer: {
-    alignItems: 'center',
     marginTop: 50,
     paddingHorizontal: 50,
     justifyContent: 'center',
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   disclaimerButton: {
     flexDirection: 'row',
     paddingVertical: 50,
-    paddingHorizontal: 30,
+    paddingRight: 30,
   },
   checkbox: {width: 20, height: 20, marginRight: 20},
 });

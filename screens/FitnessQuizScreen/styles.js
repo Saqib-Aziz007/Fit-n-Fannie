@@ -4,7 +4,7 @@ import {colors} from '../../components/constants/constants';
 
 export const styles = StyleSheet.create({
   scrollView: {backgroundColor: colors.APP_COLOR_LIGHT1, flex: 1},
-  container: {paddingHorizontal: 30, marginTop: 50},
+  container: {backgroundColor: 'red', flex: 1},
   screenTitle: {
     textAlign: 'center',
     // fontFamily: OPENSANS_REGULAR,
@@ -16,8 +16,9 @@ export const styles = StyleSheet.create({
   progressBar: {
     height: 2,
     backgroundColor: colors.APP_SECONDARY_COLOR,
-    width: '100%',
+    width: '80%',
     marginTop: 30,
+    alignSelf: 'center',
   },
   title: {
     fontSize: 32,
@@ -30,7 +31,7 @@ export const styles = StyleSheet.create({
   next: {
     justifyContent: 'flex-end',
     // height: '25%',
-    paddingHorizontal: 25,
-    marginVertical: 8,
+    paddingHorizontal: 40,
+    // marginVertical: 20,
   },
 });

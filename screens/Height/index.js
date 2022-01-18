@@ -1,62 +1,55 @@
 import React, {useState} from 'react';
 import {Text, View, Platform, Alert, ScrollView} from 'react-native';
 import {TextInput} from 'react-native-paper';
-import {OPENSANS_REGULAR, POPPINS_BOLD} from '../../assets/fonts/fonts';
+
 import AppIconButton from '../../components/AppIconButton';
-import {colors} from '../../components/constants/constants';
+import {AGE_SCREEN} from '../../navigation/routes';
 import AppToggleButton from '../../components/CustomButton';
 import AppButton from '../../components/AppButton';
-import {useNavigation} from '@react-navigation/native';
-import {AGE, HEIGHT} from '../../navigation/routes';
 import {styles} from './styles';
-import WeightScreen from '../weight';
 
 const HeightScreen = ({navigation, route}) => {
-  console.log('WightScreen', route.params);
-  const [height, setHeight] = useState();
-  const [HeightUnit, setHeightUnit] = useState('FT');
+  console.log('WightScreen', route?.params);
+  const [HeightUnit, setHeightUnit] = useState('LBS');
+  const [Height, setHeight] = useState();
   return (
     <ScrollView style={styles.scrollView}>
-      <View style={styles.container}>
-        <AppIconButton
-          icon={'chevron-left'}
-          size={32}
-          onPress={() => navigation.goBack()}
+      <AppIconButton
+        icon={'chevron-left'}
+        size={32}
+        onPress={() => navigation.goBack()}
+      />
+      <View style={{paddingHorizontal: 40, marginBottom: 100}}>
+        <Text style={styles.screenTitle}>Account Setup</Text>
+        <View style={styles.progressBar}></View>
+        <Text style={styles.title}>Height</Text>
+        <TextInput
+          onChangeText={setHeight}
+          keyboardType="numeric"
+          style={styles.input}
         />
-        <View style={{height: '100%'}}>
-          <Text style={styles.screenTitle}>Account Setup</Text>
-          <View style={styles.progressBar}></View>
-          <Text style={styles.title}>HEIGHT</Text>
-          <TextInput
-            onChangeText={setHeight}
-            keyboardType="numeric"
-            style={styles.input}
-          />
-          <AppToggleButton
-            state1="FT"
-            state2="CM"
-            onPress={setHeightUnit}
-            style={{alignSelf: 'center', marginTop: 25}}
-          />
-        </View>
-        <View style={styles.next}>
-          <AppButton
-            title={'NEXT'}
-            // onPress={() =>
-            //   console.log('HeightScreen on submit::::', {
-            //   navigation.navigate(AGE, {
-            //     ...route.params,
-            //     Height: {height, HeightUnit},
-            //   })
-            // }
-            onPress={() =>
-              navigation.navigate(AGE, {
-                ...route.params,
-                Height: {height, HeightUnit},
-              })
-            }
-          />
-        </View>
+        <AppToggleButton
+          state1="CM"
+          state2="FT"
+          onPress={setHeightUnit}
+          style={{alignSelf: 'center', marginTop: 25}}
+        />
+      </View>
+      <View
+        style={{
+          paddingHorizontal: 40,
+          marginVertical: Platform.OS === 'ios' ? 100 : 50,
+        }}>
+        <AppButton
+          title={'NEXT'}
+          style={{paddingHorizontal: 40}}
+          onPress={() =>
+            navigation.navigate(AGE_SCREEN, {
+              ...route.params,
+              Height: {Height, HeightUnit},
+            })
+          }
+        />
       </View>
     </ScrollView>
   );
