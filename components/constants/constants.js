@@ -6,6 +6,7 @@ export const colors = {
   APP_SECONDARY_COLOR: '#104F55',
   APP_PRIMARY_COLOR: '#F16889',
   APP_COLOR_BLACK: '#000000',
+  APP_COLON_COLOR: '#646464',
 };
 
 export const images = {
