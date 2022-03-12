@@ -5,7 +5,6 @@ import {colors} from '../constants/constants';
 
 const styles = StyleSheet.create({
   mainContainer: {
-    position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',

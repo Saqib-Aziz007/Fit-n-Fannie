@@ -14,7 +14,12 @@ const initialState = {
   },
 };
 
-const AppToggleButton = ({onPress, state1 = 'PM', state2 = 'AM', style}) => {
+const AppToggleButton = ({
+  onPress = val => alert(val),
+  state1 = 'PM',
+  state2 = 'AM',
+  style,
+}) => {
   const [pressed, setPressed] = useState(initialState);
 
   const handleButton1Color = () => {

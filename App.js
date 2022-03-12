@@ -1,6 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthNavigator from './navigation/AuthNavigation/AuthNavigator';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
+import PushNotification from 'react-native-push-notification';
 import HealthDisclaimer from './screens/HealthDisclaimer';
 import HealthDisclaimer2 from './screens/HealthDisclaimer2';
 import WeightScreen from './screens/weight';
@@ -18,16 +20,43 @@ import {
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import Profile from './screens/Profile';
 import GoalScreen from './screens/GoalScreen';
+import AvailabilityScreen from './screens/Availability';
+import ScrollTimeBox from './components/ScrollTimeBox';
 
 const App = () => {
+  const [permissions, setPermissions] = useState({});
+  const [selectedItem, setSelectedItem] = useState();
   useEffect(() => {
-    requestUserPermission();
-    NotificationListener();
+    // const type = 'notification';
+    // PushNotificationIOS.addEventListener(type, onRemoteNotification);
+    // return () => {
+    //   PushNotificationIOS.removeEventListener(type);
+    // };
+    // requestUserPermission();
+    // NotificationListener();
+    createChannel();
     GoogleSignin.configure({
       webClientId:
         '1073384982468-itp0fovbutlcr929etl5977f3ertitmo.apps.googleusercontent.com',
     });
   }, []);
+
+  const createChannel = () => {
+    PushNotification.createChannel({
+      channelId: 'channel1',
+      channelName: 'Notification Channel',
+    });
+  };
+
+  const onRemoteNotification = notification => {
+    const isClicked = notification.getData().userInteraction === 1;
+
+    if (isClicked) {
+      // Navigate user to another screen
+    } else {
+      // Do something else with push notification
+    }
+  };
   return (
     // <SafeAreaView>
     //   <View>
@@ -41,9 +70,9 @@ const App = () => {
     //     </Text>
     //   </View>
     // </SafeAreaView>
-    <NavigationContainer>
-      <AuthNavigator />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <AuthNavigator />
+    // </NavigationContainer>
 
     // <SafeAreaView>
     //   <GenderCard
@@ -55,7 +84,11 @@ const App = () => {
     //   />
     // </SafeAreaView>
     // <HeightScreen />
-    // <GoalScreen />
+    // <ScrollTimeBox
+    //   onValueChange={({item, index}) => console.log(item, 'selecteditem')}
+    //   data={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+    // />
+    <AvailabilityScreen />
   );
 };
 
