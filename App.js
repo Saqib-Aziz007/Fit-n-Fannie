@@ -21,9 +21,11 @@ import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import Profile from './screens/Profile';
 import GoalScreen from './screens/GoalScreen';
 import AvailabilityScreen from './screens/Availability';
+import ScrollTimeBox from './components/ScrollTimeBox';
 
 const App = () => {
   const [permissions, setPermissions] = useState({});
+  const [selectedItem, setSelectedItem] = useState();
   useEffect(() => {
     // const type = 'notification';
     // PushNotificationIOS.addEventListener(type, onRemoteNotification);
@@ -82,6 +84,10 @@ const App = () => {
     //   />
     // </SafeAreaView>
     // <HeightScreen />
+    // <ScrollTimeBox
+    //   onValueChange={({item, index}) => console.log(item, 'selecteditem')}
+    //   data={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+    // />
     <AvailabilityScreen />
   );
 };

@@ -10,24 +10,54 @@ import {OPENSANS_REGULAR} from '../../assets/fonts/fonts';
 import {colors} from '../../components/constants/constants';
 import AppToggleButton from '../../components/CustomButton';
 import {handleLocalNotification} from '../../utils/PushNotification/PushNotification';
+import ScrollTimeBox from '../../components/ScrollTimeBox';
 
 const AvailabilityScreen = ({navigation, route}) => {
   //   console.log('AvailabilityScreen::::', route?.params);
-  const [availability, setAvailability] = useState({
-    days: {
-      sun: false,
-      mon: false,
-      tue: false,
-      wed: false,
-      thu: false,
-      fri: false,
-      sat: false,
-    },
-    timing: {},
-  });
-  const availabilityDays = [];
-  useEffect(() => {}, [availabilityDays]);
-
+  // const [availability, setAvailability] = useState({
+  //   days: {
+  //     sun: false,
+  //     mon: false,
+  //     tue: false,
+  //     wed: false,
+  //     thu: false,
+  //     fri: false,
+  //     sat: false,
+  //   },
+  //   timing: {},
+  // });
+  const [selected, setSelected] = useState([]);
+  const hours = [
+    '01',
+    '02',
+    '03',
+    '04',
+    '05',
+    '06',
+    '07',
+    '08',
+    '09',
+    '10',
+    '11',
+    '12',
+  ];
+  const minutes = [
+    '00',
+    '05',
+    '10',
+    '15',
+    '20',
+    '25',
+    '30',
+    '35',
+    '40',
+    '45',
+    '50',
+    '55',
+    '60',
+  ];
+  const AvailableDays = [];
+  
   return (
     <ScrollView style={styles.scrollView}>
       <AppIconButton
@@ -42,138 +72,42 @@ const AvailabilityScreen = ({navigation, route}) => {
         <View
           style={{
             flexDirection: 'row',
-            justifyContent: 'center',
+            flexWrap: 'wrap',
             alignItems: 'center',
           }}>
-          <LabelBox
-            label={'SUN'}
-            position={'relative'}
-            containerStyle={styles.labelBox}
-            textStyle={styles.labelBoxText}
-            selected={availabilityDays.includes('SUN')}
-            inActiveBorderColor={colors.APP_SECONDARY_COLOR}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            onPress={val =>
-              // setAvailability({
-              //   days: {...availability.days, sun: !availability?.days?.sun},
-              // })
-              {
-                const index = availabilityDays.indexOf('SUN');
-                console.log(index);
-                if (index > -1) {
-                  availabilityDays.splice(index, 1);
-                  console.log(availabilityDays, 'removed');
-                } else {
-                  availabilityDays.push('SUN');
-                  console.log(availabilityDays, 'added');
-                }
-              }
-            }
-          />
-          <LabelBox
-            label={'MON'}
-            position={'relative'}
-            containerStyle={{
-              ...styles.labelBox,
-              marginLeft: 24,
-              marginVertical: 16,
-            }}
-            textStyle={styles.labelBoxText}
-            selected={availability?.days?.mon}
-            inActiveBorderColor={colors.APP_SECONDARY_COLOR}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            onPress={val =>
-              setAvailability({
-                days: {...availability.days, mon: !availability?.days?.mon},
-              })
-            }
-          />
-          <LabelBox
-            label={'TUE'}
-            position={'relative'}
-            containerStyle={{...styles.labelBox, marginLeft: 24}}
-            textStyle={styles.labelBoxText}
-            selected={availability?.days?.tue}
-            inActiveBorderColor={colors.APP_SECONDARY_COLOR}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            onPress={val =>
-              setAvailability({
-                days: {...availability.days, tue: !availability?.days?.tue},
-              })
-            }
-          />
-          <LabelBox
-            label={'WED'}
-            position={'relative'}
-            containerStyle={{...styles.labelBox, marginLeft: 24}}
-            textStyle={styles.labelBoxText}
-            inActiveBorderColor={colors.APP_SECONDARY_COLOR}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            selected={availability?.days?.wed}
-            onPress={val =>
-              setAvailability({
-                days: {...availability.days, wed: !availability?.days?.wed},
-              })
-            }
-          />
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <LabelBox
-            label={'THU'}
-            position={'relative'}
-            containerStyle={styles.labelBox}
-            textStyle={styles.labelBoxText}
-            selected={availability?.days?.thu}
-            inActiveBorderColor={colors.APP_SECONDARY_COLOR}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            onPress={val =>
-              setAvailability({
-                days: {...availability.days, thu: !availability?.days?.thu},
-              })
-            }
-          />
-          <LabelBox
-            label={'FRI'}
-            position={'relative'}
-            containerStyle={{...styles.labelBox, marginLeft: 24}}
-            textStyle={styles.labelBoxText}
-            selected={availability?.days?.fri}
-            inActiveBorderColor={colors.APP_SECONDARY_COLOR}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            onPress={val =>
-              setAvailability({
-                days: {...availability.days, fri: !availability?.days?.fri},
-              })
-            }
-          />
-          <LabelBox
-            label={'SAT'}
-            position={'relative'}
-            containerStyle={{...styles.labelBox, marginLeft: 24}}
-            textStyle={styles.labelBoxText}
-            selected={availability?.days?.sat}
-            inActiveBorderColor={colors.APP_SECONDARY_COLOR}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            onPress={val =>
-              setAvailability({
-                days: {...availability.days, sat: !availability?.days?.sat},
-              })
-            }
-          />
-          <LabelBox
-            label={'SAT'}
-            position={'relative'}
-            containerStyle={styles.emptyBox}
-            textStyle={styles.emptyBoxLabel}
-            inActiveBorderColor={colors.APP_COLOR_LIGHT1}
-            activeBorderColor={colors.APP_PRIMARY_COLOR}
-            onPress={() => console.log('ignore on availability screen')}
-          />
+          {['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'].map(
+            (item, index) => (
+              <LabelBox
+                label={item}
+                position={'relative'}
+                containerStyle={styles.labelBox}
+                textStyle={styles.labelBoxText}
+                // selected={AvailableDays.includes(item) ? true : false}
+                selected={}
+                inActiveBorderColor={colors.APP_SECONDARY_COLOR}
+                activeBorderColor={colors.APP_PRIMARY_COLOR}
+                onPress={val => {
+                  // if (AvailableDays.includes(item)) {
+                  //   setSelected(false);
+                  //   AvailableDays.splice(index, 1);
+                  //   console.log(AvailableDays, 'incase of removed');
+                  //   // console.log(selected, 'removed');
+                  // } else {
+                  //   setSelected(index);
+                  //   AvailableDays.push(item);
+                  //   console.log(AvailableDays, ' incase of added');
+                  //   // console.log(selected, 'added');
+                  // }
+                  if(selected.includes(item)){
+                    console.log('item includes')
+                  }else{
+                    setSelected([...selected,item])
+                    console.log('item not includes')
+                  }
+                }}
+              />
+            ),
+          )}
         </View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <View>
@@ -194,19 +128,12 @@ const AvailabilityScreen = ({navigation, route}) => {
                 marginTop: 20,
               }}>
               <View style={{alignItems: 'center'}}>
-                <TextInput
-                  numOfLines={1}
-                  keyboardType={'numeric'}
-                  style={{
-                    height: 56,
-                    width: 56,
-                    backgroundColor: colors.APP_COLOR_WHITE,
-                    borderRadius: 16,
-                    padding: 9,
-                    color: colors.APP_SECONDARY_COLOR,
-                    fontSize: 32,
-                    textAlign: 'center',
-                  }}
+                <ScrollTimeBox
+                  initialSelectedIndex={0}
+                  onValueChange={({item}) => AvailableDays.push(item)}
+                  containerBackgroundColor="white"
+                  data={hours}
+                  onValueChange={({item}) => AvailableDays.push(item)}
                 />
                 {/* </View> */}
                 <Text
@@ -233,20 +160,12 @@ const AvailabilityScreen = ({navigation, route}) => {
                 :
               </Text>
               <View style={{alignItems: 'center'}}>
-                <TextInput
-                  numOfLines={1}
-                  keyboardType={'numeric'}
-                  style={{
-                    height: 56,
-                    width: 56,
-                    backgroundColor: colors.APP_COLOR_WHITE,
-                    borderRadius: 16,
-                    padding: 9,
-                    color: colors.APP_SECONDARY_COLOR,
-                    fontSize: 32,
-                    textAlign: 'center',
-                  }}
-                />
+                {/* <ScrollTimeBox
+                  initialSelectedIndex={0}
+                  onValueChange={({item}) => AvailableDays.push(item)}
+                  containerBackgroundColor="white"
+                  data={minutes}
+                /> */}
                 <Text
                   style={{
                     color: colors.APP_COLON_COLOR,
@@ -279,19 +198,12 @@ const AvailabilityScreen = ({navigation, route}) => {
                 marginTop: 20,
               }}>
               <View style={{alignItems: 'center'}}>
-                <TextInput
-                  numOfLines={1}
-                  keyboardType={'numeric'}
-                  style={{
-                    height: 56,
-                    width: 56,
-                    backgroundColor: colors.APP_COLOR_WHITE,
-                    borderRadius: 16,
-                    padding: 9,
-                    color: colors.APP_SECONDARY_COLOR,
-                    fontSize: 32,
-                    textAlign: 'center',
-                  }}
+                <ScrollTimeBox
+                  onValueChange={({item}) => AvailableDays.push(item)}
+                  containerBackgroundColor="white"
+                  initialSelectedIndex={0}
+                  data={hours}
+                  onValueChange={({item}) => AvailableDays.push(item)}
                 />
                 <Text
                   style={{
@@ -317,19 +229,13 @@ const AvailabilityScreen = ({navigation, route}) => {
                 :
               </Text>
               <View style={{alignItems: 'center'}}>
-                <TextInput
-                  numOfLines={1}
-                  keyboardType={'numeric'}
-                  style={{
-                    height: 56,
-                    width: 56,
-                    backgroundColor: colors.APP_COLOR_WHITE,
-                    borderRadius: 16,
-                    padding: 9,
-                    color: colors.APP_SECONDARY_COLOR,
-                    fontSize: 32,
-                    textAlign: 'center',
-                  }}
+                <ScrollTimeBox
+                  onValueChange={({item}) => AvailableDays.push(item)}
+                  containerBackgroundColor="white"
+                  dividerWidth={0}
+                  // dividerColor={'white'}
+                  initialSelectedIndex={0}
+                  data={minutes}
                 />
                 <Text
                   style={{
@@ -368,7 +274,6 @@ const AvailabilityScreen = ({navigation, route}) => {
           //   })
           // }
           onPress={() => {
-            availabilityDays.push();
             console.log();
           }}
         />

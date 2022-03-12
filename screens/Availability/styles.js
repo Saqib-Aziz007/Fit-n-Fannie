@@ -33,6 +33,8 @@ const styles = StyleSheet.create({
     width: 48,
     paddingHorizontal: 0,
     paddingVertical: 0,
+    marginHorizontal: 14,
+    marginVertical: 16,
     // borderColor: colors.APP_SECONDARY_COLOR,
     backgroundColor: colors.APP_COLOR_LIGHT1,
     // marginHorizontal: 16,
